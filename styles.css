@@ -5,18 +5,66 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000000;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 1s, color 1s;
+}
+
+#clock-container {
+    text-align: center;
 }
 
 #clock {
     font-size: 300px;
     font-weight: bold;
-    color: #ffffff;
 }
+
+#date {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+/* Style du bouton dark mode avec un cercle en arrière-plan */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #000000; /* Couleur de fond par défaut */
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff; /* Couleur de l'icône par défaut */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s, color 1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de relief */
+}
+
+/* Mode sombre pour tout l'écran */
+.dark-mode {
+    background-color: #000000; /* Fond sombre */
+    color: #ffffff; /* Texte clair */
+}
+
+/* Bouton en mode sombre : blanc avec icône noire */
+.dark-mode #dark-mode-toggle {
+    background-color: #ffffff; /* Fond blanc pour le bouton */
+    color: #000000; /* Couleur de l'icône en noir */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Ombre pour un effet de relief */
+}
+
 
 
 @media (max-width: 768px) {
     #clock {
-        font-size: 90px; /* Réduit la taille de la police sur les petits écrans */
+        font-size: 85px; /* Réduit la taille de la police sur les petits écrans */
+    }
+    
+    #date {
+        font-size: 25px;
     }
 }
