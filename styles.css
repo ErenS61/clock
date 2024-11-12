@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+#clock {
+    font-size: 300px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+    #clock {
+        font-size: 90px; /* Réduit la taille de la police sur les petits écrans */
+    }
+}
