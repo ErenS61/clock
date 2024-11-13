@@ -22,6 +22,12 @@ body {
 #date {
     font-size: 60px;
     margin-top: 10px;
+    font-weight: bold;
+}
+
+#text {
+    font-size: 30px;
+    margin-top: 1px;
 }
 
 /* Style du bouton dark mode avec un cercle en arrière-plan */
@@ -66,5 +72,9 @@ body {
     
     #date {
         font-size: 25px;
+    }
+    
+    #text {
+        font-size: 16px;
     }
 }
