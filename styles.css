@@ -1,10 +1,11 @@
+/* Applique la police Montserrat à tout le document */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: #ffffff;
     color: #000000;
     transition: background-color 1s, color 1s;
@@ -16,18 +17,20 @@ body {
 
 #clock {
     font-size: 300px;
-    font-weight: bold;
+    font-weight: 700; /* Poids gras pour Montserrat */
+    font-variant-numeric: tabular-nums; /* Fixe l'espacement des chiffres */
 }
 
 #date {
     font-size: 60px;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 500; /* Poids intermédiaire pour Montserrat */
 }
 
 #text {
     font-size: 30px;
     margin-top: 1px;
+    font-weight: 400; /* Poids normal pour Montserrat */
 }
 
 /* Style du bouton dark mode avec un cercle en arrière-plan */
@@ -63,11 +66,10 @@ body {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Ombre pour un effet de relief */
 }
 
-
-
+/* Responsive - petits écrans */
 @media (max-width: 768px) {
     #clock {
-        font-size: 85px; /* Réduit la taille de la police sur les petits écrans */
+        font-size: 70px; /* Réduit la taille de la police sur les petits écrans */
     }
     
     #date {
