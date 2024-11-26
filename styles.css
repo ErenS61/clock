@@ -28,9 +28,9 @@ body {
 }
 
 #text {
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 1px;
-    font-weight: 400; /* Poids normal pour Montserrat */
+    font-weight: bold; /* Poids normal pour Montserrat */
 }
 
 /* Style du bouton dark mode avec un cercle en arrière-plan */
