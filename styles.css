@@ -66,6 +66,26 @@ body {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Ombre pour un effet de relief */
 }
 
+/* Style du bouton pour le feu d'artifice */
+#fireworks-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722; /* Couleur orange */
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #ffffff; /* Texte blanc */
+    padding: 10px 20px;
+    border-radius: 25px; /* Bouton arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de relief */
+    transition: background-color 0.3s ease;
+}
+
+#fireworks-button:hover {
+    background-color: #e64a19; /* Couleur orange plus foncée au survol */
+}
+
 /* Responsive - petits écrans */
 @media (max-width: 768px) {
     #clock {
