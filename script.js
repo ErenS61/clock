@@ -72,15 +72,30 @@ function drawClock(ctx, radius) {
     ctx.lineWidth = 8;
     ctx.stroke();
 
-    // Dessiner les chiffres 3, 6, 9, 12
-    ctx.font = "30px Montserrat";
-    ctx.fillStyle = document.body.classList.contains('dark-mode') ? '#ffffff' : '#000000';
+    // Dessiner les chiffres 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("12", radius, radius - radius * 0.7); // 12 en haut
-    ctx.fillText("3", radius + radius * 0.7, radius); // 3 à droite
-    ctx.fillText("6", radius, radius + radius * 0.7); // 6 en bas
-    ctx.fillText("9", radius - radius * 0.7, radius); // 9 à gauche
+
+    // Position des chiffres
+    const numbers = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    const angleOffset = -90; // Décalage pour commencer à 12h
+
+    numbers.forEach((number, index) => {
+        const angle = (index * 30 + angleOffset) * (Math.PI / 180); // 30 degrés par heure
+        const x = radius + Math.cos(angle) * (radius * 0.7); // Position X du chiffre
+        const y = radius + Math.sin(angle) * (radius * 0.7); // Position Y du chiffre
+
+        // Appliquer une couleur orange foncé pour les chiffres 3, 6, 9, 12
+        if (number === 3 || number === 6 || number === 9 || number === 12) {
+            ctx.fillStyle = "#FF4500"; // Orange foncé
+            ctx.font = "bold 30px Montserrat"; // Optionnel : police en gras
+        } else {
+            ctx.fillStyle = document.body.classList.contains('dark-mode') ? '#ffffff' : '#000000'; // Couleur normale
+            ctx.font = "30px Montserrat"; // Police normale
+        }
+
+        ctx.fillText(number.toString(), x, y); // Dessiner le chiffre
+    });
 
     // Dessiner les traits pour les minutes
     for (let i = 0; i < 60; i++) {
