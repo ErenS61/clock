@@ -19,18 +19,41 @@ body {
     font-size: 300px;
     font-weight: 700; /* Poids gras pour Montserrat */
     font-variant-numeric: tabular-nums; /* Fixe l'espacement des chiffres */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition pour l'horloge numérique */
 }
 
 #date {
     font-size: 60px;
     margin-top: 10px;
     font-weight: 500; /* Poids intermédiaire pour Montserrat */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition pour la date */
 }
 
 #text {
     font-size: 35px;
     margin-top: 1px;
     font-weight: bold; /* Poids normal pour Montserrat */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition pour le texte */
+}
+
+/* Style du bouton analogique avec un cercle en arrière-plan */
+#analog-clock-toggle {
+    position: absolute;
+    top: 20px;
+    right: 80px; /* Position à gauche du bouton dark mode */
+    background-color: #000000; /* Couleur de fond par défaut */
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff; /* Couleur de l'icône par défaut */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Cercle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s, color 1s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de relief */
 }
 
 /* Style du bouton dark mode avec un cercle en arrière-plan */
@@ -60,6 +83,7 @@ body {
 }
 
 /* Bouton en mode sombre : blanc avec icône noire */
+.dark-mode #analog-clock-toggle,
 .dark-mode #dark-mode-toggle {
     background-color: #ffffff; /* Fond blanc pour le bouton */
     color: #000000; /* Couleur de l'icône en noir */
@@ -86,17 +110,15 @@ body {
     background-color: #e64a19; /* Couleur orange plus foncée au survol */
 }
 
-/* Responsive - petits écrans */
-@media (max-width: 768px) {
-    #clock {
-        font-size: 70px; /* Réduit la taille de la police sur les petits écrans */
-    }
-    
-    #date {
-        font-size: 25px;
-    }
-    
-    #text {
-        font-size: 16px;
-    }
+/* Styles pour l'horloge analogique */
+#analog-clock {
+    width: 600px; /* Taille de l'horloge analogique augmentée */
+    height: 600px;
+    position: relative;
+}
+
+/* Afficher le texte et la date en mode analogique */
+.analog-mode #text,
+.analog-mode #date {
+    display: block; /* Afficher le texte et la date */
 }
